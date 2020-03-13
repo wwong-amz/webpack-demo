@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("\nconst getObjectType = __webpack_require__(/*! ./src/util/getObjectType */ \"./src/util/getObjectType.js\");\nconst getDate = __webpack_require__(/*! ./src/util/dateUtility */ \"./src/util/dateUtility.js\")\n\nconst getObject = () => {\n  const objectType = getObjectType();\n  const date = getDate();\n  return {\n    getObjectType: objectType,\n    startDate: date,\n    endDate: date + 100000\n  }\n}\n\nconsole.log(getObject());\n\n//# sourceURL=webpack:///./getObject.js?");
+eval("\nconst getObjectType = __webpack_require__(/*! ./src/util/getObjectType */ \"./src/util/getObjectType.js\");\nconst getDate = __webpack_require__(/*! ./src/util/dateUtility */ \"./src/util/dateUtility.js\")\n\nconst getObject = () => {\n  // const objectType = getObjectType();\n  // const date = getDate();\n  return {\n    getObjectType: getObjectType(),\n    startDate: getDate(),\n    endDate: getDate() + 100000\n  }\n}\n\nconsole.log(getObject());\n\n//# sourceURL=webpack:///./getObject.js?");
 
 /***/ }),
 
