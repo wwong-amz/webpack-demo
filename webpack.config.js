@@ -20,11 +20,14 @@ module.exports = {
   },
   // The plugins option is used to customize the webpack build process in a variety of ways. webpack comes with a variety built-in plugins available under webpack.[plugin-name].
   plugins: [
+    // Using this plugin to clean up the files that are not in use by the project
     new CleanWebpackPlugin(),
   ],
   // The top-level output key contains set of options instructing webpack on how and where it should output your bundles, assets and anything else you bundle or load with webpack.
   output: {
+    // The reason for the brackets around name is because that way we can dynamically set the bundle names to match their entry names
     filename: '[name].bundle.js',
+    // The path defines where webpack will stored the compiled bundles.
     path: path.resolve(__dirname, 'dist'),
   }
 };
