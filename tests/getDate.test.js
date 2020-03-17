@@ -1,13 +1,11 @@
 const chai = require('chai')
 const expect = chai.expect
-// const describe = require('mocha').describe;
 const getDate = require('../getDate')
-const mocha = require('mocha')
 
 chai.should();
 chai.config.showDiff = true;
 
-mocha.describe('getDate', () => {
+describe('getDate', () => {
   it('checkTimeStamp', async () => {
     try {
       const getDateTimestamp = await getDate();

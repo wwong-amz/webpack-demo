@@ -6,3 +6,5 @@ const getDate = () => {
 }
 
 console.log(getDate());
+
+module.exports = getDate;
