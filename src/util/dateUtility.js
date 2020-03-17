@@ -1,8 +1,12 @@
 
 
-const getDate = () => {
-  return Date.now();
+const dateUtility = () => {
+  try {
+    return Date.now();
+  } catch (error) {
+    throw error
+  }
 }
 
-// export default getDate;
-module.exports = getDate;
+// export default dateUtility;
+module.exports = dateUtility;

@@ -1,15 +1,17 @@
+const fs = require('fs');
+const getS3Content = require('./src/database/database')
 
-const getObjectType = require('./src/util/getObjectType');
-const getDate = require('./src/util/dateUtility')
 
-const getObject = () => {
-  // const objectType = getObjectType();
-  // const date = getDate();
-  return {
-    getObjectType: getObjectType(),
-    startDate: getDate(),
-    endDate: getDate() + 100000
-  }
+
+const getObject = async () => {
+  const data = await getS3Content();
+  fs.writeFile('SampleImage.png', data.Body, (err) => {
+    if (err) {
+      throw err
+    } else {
+      console.log('Image has been saved')
+    }
+  })
 }
 
-console.log(getObject());
+getObject();

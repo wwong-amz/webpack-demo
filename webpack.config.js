@@ -10,13 +10,11 @@ module.exports = {
   // The point or points where to start the application bundling process. If an array is passed then all items will be processed.
   // A dynamically loaded module is not an entry point.
   entry: {
-    // awsSdk: 'aws-sdk',
-    app: './index.js',
-    getObject: './getObject.js',
-    database: './src/database/database.js',
-    util: ['./src/util/dateUtility.js', './src/util/getObjectType.js']
-    // getDate: './src/util/dateUtility.js',
-    // getObjectType: './src/util/getObjectType.js'
+    getDate: ['./getDate.js', './src/util/dateUtility.js'],
+    getObject: ['./getObject.js', './src/database/database.js']
+  },
+  externals: {
+    fs: 'commonjs fs'
   },
   // The plugins option is used to customize the webpack build process in a variety of ways. webpack comes with a variety built-in plugins available under webpack.[plugin-name].
   plugins: [
@@ -29,5 +27,6 @@ module.exports = {
     filename: '[name].bundle.js',
     // The path defines where webpack will stored the compiled bundles.
     path: path.resolve(__dirname, 'dist'),
-  }
+  },
+  target: 'node'
 };
